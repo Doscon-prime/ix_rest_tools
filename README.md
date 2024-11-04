@@ -29,7 +29,7 @@ session = requests.Session()
 Set up the Server URL
 
 Define the base URL of your server. Replace your_server_ip_or_domain with the actual IP address or domain:
-
+```
 python
 
 url = "your_server_ip_or_domain"
@@ -46,11 +46,12 @@ if tags:
     print("Tags:", tags)
 else:
     print("Failed to retrieve tags.")
+```
 
 2. Fetch a Specific Tag Value
 
 To retrieve the value of a specific tag:
-
+```
 python
 
 tag_name = "example_tag_name"
@@ -60,11 +61,12 @@ if value:
     print(f"Value of {tag_name}:", value.json())  # or value.text if not JSON
 else:
     print(f"Failed to retrieve value for tag {tag_name}.")
+```
 
 3. Fetch Multiple Tag Values in Batch
 
 To retrieve multiple tag values in a single request, use get_values. You can specify process_values=True to return a dictionary of tag names and values, or False to return the raw response:
-
+```
 python
 
 tags_to_get = ["tag1", "tag2", "tag3"]
@@ -76,11 +78,13 @@ if values:
     print("Tag Values:", values)
 else:
     print("Failed to retrieve tag values.")
+`
 
 Example Script
 
 Here's an example that puts everything together:
 
+```
 python
 
 from ix_rest_tools import get_tags, get_value, get_values
@@ -112,6 +116,8 @@ if tag_values:
     print("Tag Values:", tag_values)
 else:
     print("Failed to retrieve tag values.")
+
+```
 
 Error Handling
 
