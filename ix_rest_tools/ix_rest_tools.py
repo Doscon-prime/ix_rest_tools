@@ -17,7 +17,6 @@ def get_tags(url,session):
         return False
 
 def get_value(url,tag,session):
-    
     headers = {'Content-type': "application/json",
                "Accept": "application/json"}
     result = session.get("http://"+url+"/tags/"+tag,headers=headers)
@@ -45,7 +44,7 @@ def get_values(url,tags,session,process_values = True):
             return values
         return response
     else:
-        return response
+        return False
 
 
 
