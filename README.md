@@ -3,29 +3,29 @@ ix_rest_tools is a Python library for interacting with the iX Web Server API. Th
 Installation
 
 Install the package from PyPI:
-
+```
 bash
 
 pip install ix_rest_tools
-
+```
 Usage
 
 To use the module, start by creating a requests.Session for your HTTP requests. This helps keep the connection alive across multiple requests, reducing overhead.
 Import the Library
-
+```
 python
 
 from ix_rest_tools import get_tags, get_value, get_values
 import requests
-
+```
 Initialize a Session
 
 Creating a session helps maintain an active connection to the server:
-
+```
 python
 
 session = requests.Session()
-
+```
 Set up the Server URL
 
 Define the base URL of your server. Replace your_server_ip_or_domain with the actual IP address or domain:
@@ -33,11 +33,11 @@ Define the base URL of your server. Replace your_server_ip_or_domain with the ac
 python
 
 url = "your_server_ip_or_domain"
-
+```
 1. Fetch All Tags
 
 To retrieve a list of all available tags:
-
+```
 python
 
 tags = get_tags(url, session)
@@ -78,7 +78,7 @@ if values:
     print("Tag Values:", values)
 else:
     print("Failed to retrieve tag values.")
-`
+```
 
 Example Script
 
