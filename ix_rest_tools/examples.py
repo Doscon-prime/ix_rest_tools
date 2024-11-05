@@ -26,3 +26,4 @@ print(values)
 insert_values = {"sensor1":1,"sensor2":2,"sensor3":3}
 response = set_values(server,insert_values,session)
 print(response) 
+

@@ -9,14 +9,14 @@ Created on Mon Nov  4 13:54:06 2024
 import requests
 import json
 
-def get_tags(url:str,session:requests.Session) -> dict | bool:
+def get_tags(url:str,session:requests.Session):
     result = session.get("http://"+url+"/tags")
     if result.status_code == 200:
         return result.json()
     else:
         return False
 
-def get_value(url:str,tag:str,session:requests.Session) -> dict | bool:
+def get_value(url:str,tag:str,session:requests.Session):
     headers = {'Content-type': "application/json",
                "Accept": "application/json"}
     result = session.get("http://"+url+"/tags/"+tag,headers=headers)
@@ -48,7 +48,7 @@ def get_values(url:str,tags:list,session:requests.Session,process_values:bool = 
     else:
         return False
 
-def set_values(url:str,values:dict,session:requests.Session) -> bool:
+def set_values(url:str,values:dict,session:requests.Session):
     url = "http://"+url+"/tagbatch"
     values_data = []
     for item in values:
