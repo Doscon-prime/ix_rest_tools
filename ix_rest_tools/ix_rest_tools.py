@@ -46,5 +46,22 @@ def get_values(url,tags,session,process_values = True):
     else:
         return False
 
+def set_values(url,values,session):
+    url = "http://"+url+"/tagbatch"
+    values_data = []
+    for item in values:
+        values_data.append({"name":item,"value":values[item]})
+
+    data = {
+    "setTags": values_data  # List of tag names to return
+    }
+    headers = {'Content-type': "application/json"}
+    response = session.post(url, json=data,headers=headers)
+    if response.status_code == 200:
+        return True
+
+    else:
+        return False
+
 
 
