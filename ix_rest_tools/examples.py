@@ -1,4 +1,4 @@
-#%%
+#%% Testing environment caches which makes testing this thing annoying. This forces a reload of modules
 from IPython import get_ipython
 ip = get_ipython()
 ip.magic("reload_ext autoreload")  # these will enable module autoreloading
