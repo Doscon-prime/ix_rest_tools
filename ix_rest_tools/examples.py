@@ -10,7 +10,7 @@ import requests
 #%%
 server = "10.1.1.164" # replace with your IP
 
-session = requests.Session()
+session = requests.Session() # Beijer webservers often have a limit of only one concurrent connection. Session keeps the connection open. Otherwise you will have to wait for a timeout between each request.
 
 #%% Get all tags
 tags = get_tags(server,session)

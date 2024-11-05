@@ -28,6 +28,8 @@ def get_value(url,tag,session):
 
 def get_values(url,tags,session,process_values = True):
     url = "http://"+url+"/tagbatch"
+
+    #TODO: API says it supports the parameter includeMetadata, but i cannot for the life of me get this to work.
     data = {
     "getTags": tags,  # List of tag names to return
 
