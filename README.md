@@ -126,6 +126,8 @@ License
 
 
 ## Build instructions
+Update version number in setup.py
+
 ```
 python setup.py sdist bdist_wheel
 ```

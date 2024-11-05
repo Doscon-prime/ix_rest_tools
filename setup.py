@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="ix_rest_tools",
-    version="0.1.1",
+    version="0.1.2",
     description="Python library for interacting with Beijer Electronics iX Web Server API.",
     long_description="Python wrapper for Beijer Electronics iX Web Server API",
     long_description_content_type="text/plain",
