@@ -9,24 +9,24 @@ Created on Mon Nov  4 13:54:06 2024
 import requests
 import json
 
-def get_tags(url,session):
+def get_tags(url:str,session:requests.Session) -> dict | bool:
     result = session.get("http://"+url+"/tags")
     if result.status_code == 200:
         return result.json()
     else:
         return False
 
-def get_value(url,tag,session):
+def get_value(url:str,tag:str,session:requests.Session) -> dict | bool:
     headers = {'Content-type': "application/json",
                "Accept": "application/json"}
     result = session.get("http://"+url+"/tags/"+tag,headers=headers)
 
     if result.status_code == 200:
-        return result
+        return result.json()
     else:
         return False
 
-def get_values(url,tags,session,process_values = True):
+def get_values(url:str,tags:list,session:requests.Session,process_values:bool = True):
     url = "http://"+url+"/tagbatch"
 
     #TODO: API says it supports the parameter includeMetadata, but i cannot for the life of me get this to work.
@@ -44,11 +44,11 @@ def get_values(url,tags,session,process_values = True):
             for item in response.json()["tags"]:
                 values[item["name"]] = item["value"]
             return values
-        return response
+        return response.json()
     else:
         return False
 
-def set_values(url,values,session):
+def set_values(url:str,values:dict,session:requests.Session) -> bool:
     url = "http://"+url+"/tagbatch"
     values_data = []
     for item in values:
