@@ -124,4 +124,15 @@ Error Handling
 Each function returns False if the request fails, allowing you to handle errors gracefully.
 License
 
+
+## Build instructions
+```
+python setup.py sdist bdist_wheel
+```
+
+```
+twine upload dist/*
+```
+
+# license
 This project is licensed under the MIT License.
